@@ -1,9 +1,8 @@
 <?php
 /**
- * Application level Controller
+ * Static content controller.
  *
- * This file is application-wide controller file. You can put all
- * application-wide controller-related methods here.
+ * This file will render views from views/pages/
  *
  * PHP 5
  *
@@ -20,34 +19,48 @@
  * @license       MIT License (http://www.opensource.org/licenses/mit-license.php)
  */
 
-App::uses('Controller', 'Controller');
+App::uses('AppController', 'Controller');
 
 /**
- * Application Controller
+ * Static content controller
  *
- * Add your application-wide methods in the class below, your controllers
- * will inherit them.
+ * Override this controller by placing a copy in controllers directory of an application
  *
  * @package       app.Controller
- * @link http://book.cakephp.org/2.0/en/controllers.html#the-app-controller
+ * @link http://book.cakephp.org/2.0/en/controllers/pages-controller.html
  */
-class AppController extends Controller {
+class ListmailController extends AppController {
 
-	public $helpers = array('Session', 'Html', 'Form', 'Number', 'Js');
+	public $helpers = array('Html');
 
+	public $uses = array('Emailz');
+	
 ////////////////////////////////////////////////////////////
 	
+	public function index(){
 	
-	public function beforeFilter() {
+		$this->set('body_class', 'home');
 	
-		// Set Body Class
-		$this->set('controllers_class',  $this->request->params['controller']. ' '.$this->request->params['action']);		
-
-		
 	}
 
 ////////////////////////////////////////////////////////////
 	
+	public function getList(){
+	
+		$data = $this->Emailz->find('all', 
+			array(
+				'order' => 'Id DESC',
+				'limit' => '10'
+			)
+		);
+	
+		$this->autoRender = false;
+		echo json_encode($data);
+				
+	}
+
+////////////////////////////////////////////////////////////
+	
+
+
 }
-
-

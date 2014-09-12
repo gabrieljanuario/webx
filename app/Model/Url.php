@@ -5,6 +5,9 @@ class Url extends AppModel {
 
 	public $useTable = 'urls';
 	
+	public $actsAs = array('Containable');
+	
+	/*
 	public $validate = array(
 		'url' => array(
 			'rule1' => array(
@@ -13,7 +16,8 @@ class Url extends AppModel {
 				'allowEmpty' => false,
 				'required' => true,
 			),
-		),
+		)
 	);
+	*/
 	
 }

@@ -12,24 +12,27 @@
 	<?php
 		echo $this->Html->meta('icon');
 
-		echo $this->Html->css('cake.generic');
+		echo $this->Html->css('bootstrap.css');
 
 		echo $this->fetch('meta');
 		echo $this->fetch('css');
 		echo $this->fetch('script');
 	?>
 </head>
-<body>
+<body class="<?php echo $controllers_class." "; if(!empty($body_class)) : echo $body_class; endif; ?>">
 	<div id="container">
+		
 		<div id="header">
-			<h1>teste</h1>
+			<h1 class="text-center">Gabriel Fernandes Janu&aacute;rio</h1>
 		</div>
+		
 		<div id="content">
 
 			<?php echo $this->Session->flash(); ?>
 
 			<?php echo $this->fetch('content'); ?>
 		</div>
+		
 		<div id="footer">
 			<?php echo $this->Html->link(
 					$this->Html->image('cake.power.gif', array('alt' => 'Powered by Cakephp', 'border' => '0')),
@@ -39,6 +42,7 @@
 			?>
 		</div>
 	</div>
-	<?php echo $this->element('sql_dump'); ?>
+	
+	<?php // echo $this->element('sql_dump'); ?>
 </body>
 </html>
