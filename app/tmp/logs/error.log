@@ -1,0 +1,13 @@
+2014-09-11 17:53:53 Error: [MissingViewException] View file "/Applications/MAMP/htdocs/webx/app/View/Crawler/index.ctp" is missing.
+#0 /Applications/MAMP/htdocs/webx/lib/Cake/View/View.php(467): View->_getViewFileName(NULL)
+#1 /Applications/MAMP/htdocs/webx/lib/Cake/Controller/Controller.php(959): View->render(NULL, NULL)
+#2 /Applications/MAMP/htdocs/webx/lib/Cake/Routing/Dispatcher.php(110): Controller->render()
+#3 /Applications/MAMP/htdocs/webx/lib/Cake/Routing/Dispatcher.php(85): Dispatcher->_invoke(Object(CrawlerController), Object(CakeRequest), Object(CakeResponse))
+#4 /Applications/MAMP/htdocs/webx/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2014-09-11 18:00:46 Error: [MissingControllerException] Controller class CssController could not be found.
+#0 /Applications/MAMP/htdocs/webx/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-09-11 18:00:47 Error: [MissingControllerException] Controller class CssController could not be found.
+#0 /Applications/MAMP/htdocs/webx/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
